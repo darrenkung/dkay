@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Graduation Certificate Generator</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+    }
+    .container {
+        width: 90%;
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        text-align: center;
+    }
+    form {
+        margin-top: 20px;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    input[type="text"] {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    .input-description {
+        font-size: 0.8em;
+        color: #666;
+        margin-bottom: 10px;
+    }
+    button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+    .output {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Graduation Certificate Generator</h1>
+    <form id="certificateForm">
+        <label for="studentName">Student's Name:</label>
+        <div class="input-description">(e.g., John Doe)</div>
+        <input type="text" id="studentName" placeholder="Enter student's name" required>
+        <label for="schoolName">School Name:</label>
+        <div class="input-description">(e.g., XYZ High School)</div>
+        <input type="text" id="schoolName" placeholder="Enter school's name" required>
+        <label for="yearEntry">Year of Entry:</label>
+        <div class="input-description">(e.g., 2018)</div>
+        <input type="text" id="yearEntry" placeholder="Enter year of entry" required>
+        <label for="yearGraduation">Year of Graduation:</label>
+        <div class="input-description">(e.g., 2022)</div>
+        <input type="text" id="yearGraduation" placeholder="Enter year of graduation" required>
+        <label for="personalQualities">Personal Qualities:</label>
+        <div class="input-description">(e.g., Leadership, Communication)</div>
+        <input type="text" id="personalQualities" placeholder="Enter personal qualities">
+        <label for="academicSkills">Academic Skills:</label>
+        <div class="input-description">(e.g., Math, Science)</div>
+        <input type="text" id="academicSkills" placeholder="Enter academic skills">
+        <label for="academicCompetitions">Academic Competitions:</label>
+        <div class="input-description">(e.g., Science Fair, Debate Club)</div>
+        <input type="text" id="academicCompetitions" placeholder="Enter academic competitions">
+        <label for="ccaContributions">CCA Contributions:</label>
+        <div class="input-description">(e.g., Sports, Music)</div>
+        <input type="text" id="ccaContributions" placeholder="Enter CCA contributions">
+        <label for="classOrSchoolContributions">Class/School Contributions:</label>
+        <div class="input-description">(e.g., Prefect, Student Council)</div>
+        <input type="text" id="classOrSchoolContributions" placeholder="Enter class/school contributions">
+        <label for="viaContributions">VIA Contributions:</label>
+        <div class="input-description">(e.g., Community Service, Volunteering)</div>
+        <input type="text" id="viaContributions" placeholder="Enter VIA contributions">
+        <button type="button" onclick="generateCertificate()">Generate Certificate</button>
+    </form>
+    <div class="output" id="certificateOutput"></div>
+</div>
+
+<script>
+    function generateCertificate() {
+        const studentName = document.getElementById("studentName").value;
+        const schoolName = document.getElementById("schoolName").value;
+        const yearEntry = document.getElementById("yearEntry").value;
+        const yearGraduation = document.getElementById("yearGraduation").value;
+        const personalQualities = document.getElementById("personalQualities").value;
+        const academicSkills = document.getElementById("academicSkills").value;
+        const academicCompetitions = document.getElementById("academicCompetitions").value;
+        const ccaContributions = document.getElementById("ccaContributions").value;
+        const classOrSchoolContributions = document.getElementById("classOrSchoolContributions").value;
+        const viaContributions = document.getElementById("viaContributions").value;
+
+        const certificatePrompt = `Write a school graduation certificate for a student that has graduated from a secondary school. The tone of this certificate should formal, respectful and celebratory. It should convey a sense of accomplishment and recognition for the student's contributions to the school throughout their academic journey.
+
+Use the following information while writing the certificate.
+
+Student name: ${studentName}
+School: ${schoolName}
+Duration in schoool: ${yearEntry} to ${yearGraduation}
+Personal qualities: ${personalQualities}
+Academic skills: ${academicSkills}
+Academic competitions: ${academicCompetitions}
+CCA contributions: ${ccaContributions}
+Class or school contributions: ${classOrSchoolContributions}
+VIA contributions: ${viaContributions}
+
+
+
+
+In the first paragraph, include the student's name and school name and time spent in the school.
+
+In the second paragraph, write a 100-word paragraph to describe the student in terms of their personal qualities.
+
+In the third paragraph, write a 150-word paragraph to describe the students's strength in terms of their academic skills, as well as the various acadamic competitions they have taken part in.
+
+In the forth paragraph, write a 100-word paragraph describing the student's contributions to their CCA, as well as the competitions they have taken part in.
+
+In the fifth paragraph, write a 100-word paragraph describing the student's contributions to their class and school.
+
+In the sixth paragraph, write a 100-word paragrah describing the student's VIA contributions.`;
+
+        document.getElementById("certificateOutput").innerText = certificatePrompt;
+    }
+</script>
+</body>
+</html>
